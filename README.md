@@ -11,7 +11,8 @@
 ## Installation
 docs link:https://laravel.com/docs/8.x
 <br>
-Run command: php artisan migrate
+Run command: <br>
+            php artisan migrate
 <br>
 
             php artisan serve
