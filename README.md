@@ -11,11 +11,12 @@
 ## Installation
 docs link:https://laravel.com/docs/8.x
 <br>
-Run command: <br>
-            php artisan migrate
+Run command: 
+            
 <br>
 
-            php artisan serve
+            - php artisan migrate
+            - php artisan serve
 
 
 ## About Laravel
