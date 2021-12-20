@@ -10,6 +10,7 @@
 
 ## Installation
 docs link:https://laravel.com/docs/8.x
+<br>
 Run command: php artisan migrate
              php artisan serve
 
