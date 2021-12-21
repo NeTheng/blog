@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use Illuminate\Support\Str;
 
 class UsersController extends Controller
 {
@@ -45,7 +46,8 @@ class UsersController extends Controller
         //For demo purposes only. When creating user or inviting a user
         // you should create a generated random password and email it to the user
         $user->create(array_merge($request->validated(), [
-            'password' => 'test' 
+            'password' => 'test',
+            'api_token' => Str::random(60),
         ]));
 
         return redirect()->route('users.index')
