@@ -37,5 +37,9 @@
             </tbody>
         </table>
 
+        <div class="d-flex">
+            {!! $permissions->links() !!}
+        </div>
+
     </div>
 @endsection
