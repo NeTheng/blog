@@ -60,6 +60,42 @@ Route::group(['middleware' => ['auth', 'permission']], function () {
 
 
 
+
+// Province
+Route::group(['prefix' => 'province'], function () {
+    Route::get('/', 'ProvinceController@index')->name('province.index');
+    Route::get('/create', 'ProvinceController@create')->name('province.create');
+    Route::post('/create', 'ProvinceController@store')->name('province.store');
+    Route::get('/{province}/show', 'ProvinceController@show')->name('province.show');
+    Route::get('/{province}/edit', 'ProvinceController@edit')->name('province.edit');
+    Route::patch('/{province}/update', 'ProvinceController@update')->name('province.update');
+    Route::delete('/{province}/delete', 'ProvinceController@destroy')->name('province.destroy');
+});
+
+
+// District
+Route::group(['prefix' => 'district'], function () {
+    Route::get('/', 'DistrictController@index')->name('district.index');
+    Route::get('/create', 'DistrictController@create')->name('district.create');
+    Route::post('/create', 'DistrictController@store')->name('district.store');
+    Route::get('/{district}/show', 'DistrictController@show')->name('district.show');
+    Route::get('/{district}/edit', 'DistrictController@edit')->name('district.edit');
+    Route::patch('/{district}/update', 'DistrictController@update')->name('district.update');
+    Route::delete('/{district}/delete', 'DistrictController@destroy')->name('district.destroy');
+});
+
+// District
+Route::group(['prefix' => 'commune'], function () {
+    Route::get('/', 'CommuneController@index')->name('commune.index');
+    Route::get('/create', 'CommuneController@create')->name('commune.create');
+    Route::post('/create', 'CommuneController@store')->name('commune.store');
+    Route::get('/{commune}/show', 'CommuneController@show')->name('commune.show');
+    Route::get('/{commune}/edit', 'CommuneController@edit')->name('commune.edit');
+    Route::patch('/{commune}/update', 'CommuneController@update')->name('commune.update');
+    Route::delete('/{commune}/delete', 'CommuneController@destroy')->name('commune.destroy');
+});
+
+
 // Route Roles & Permission Access in Controller
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::group(['middleware' => ['auth', 'permission']], function () {

@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0b91f8dcd65501e8048113e6989d2072b9ae21df',
+        'reference' => '4bbeff59285330dce5d6b86f6950b72df783cb61',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -382,6 +382,15 @@
                 0 => '*',
             ),
         ),
+        'kyslik/column-sortable' => array(
+            'pretty_version' => '6.4.1',
+            'version' => '6.4.1.0',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../kyslik/column-sortable',
+            'aliases' => array(),
+            'reference' => '44f9da98acd31b2e871d0074bd638998990888b1',
+            'dev_requirement' => false,
+        ),
         'laminas/laminas-diactoros' => array(
             'pretty_version' => '2.8.0',
             'version' => '2.8.0.0',
@@ -406,7 +415,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0b91f8dcd65501e8048113e6989d2072b9ae21df',
+            'reference' => '4bbeff59285330dce5d6b86f6950b72df783cb61',
             'dev_requirement' => false,
         ),
         'laravel/passport' => array(

@@ -55,7 +55,23 @@
                                     <a class="dropdown-item" href="{{ route('roles.index') }}">Role</a>
                                     <a class="dropdown-item" href="{{ route('permissions.index') }}">Permission</a>
                                 </div>
-                            </li>
+                                
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    PDC of Cambodia
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('province.index') }}">Province</a>
+                                    <a class="dropdown-item" href="{{ route('district.index') }}">District</a>
+                                    <a class="dropdown-item" href="{{ route('commune.index') }}">Commune</a>
+                                </div>
+                                
+                        </li>
+                        
 
                     </ul>
 
