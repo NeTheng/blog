@@ -31,7 +31,7 @@
                         <td>{{ $user->email }}</td>
                         <td>
                             @foreach($user->roles as $role)
-                                <span class="badge bg-primary">{{ $role->name }}</span>
+                                <span class="badge bg-success">{{ $role->name }}</span>
                             @endforeach
                         </td>
                         <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-warning btn-sm">Show</a></td>
