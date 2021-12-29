@@ -15,9 +15,9 @@
 
         <table class="table table-bordered">
           <tr>
-             <th width="1%">@sortablelink('id', 'No.', )</th>
-             <th>@sortablelink('name', "Name")</th>
-             <th>@sortablelink('created_at', "Created At")</th>
+             <th width="1%">@sortablelink('id', 'No.',  ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"] )</th>
+             <th>@sortablelink('name', "Name", ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"])</th>
+             <th>@sortablelink('created_at', "Created At",  ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"])</th>
              <th width="3%" colspan="3">Action</th>
           </tr>
             @foreach ($provinces as $key => $province)
