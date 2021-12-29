@@ -15,8 +15,8 @@
 
         <table class="table table-bordered">
           <tr>
-             <th width="1%">No</th>
-             <th>Name</th>
+             <th width="1%">@sortablelink('id', 'No.',  ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"] )</th>
+             <th>@sortablelink('name', 'Name',  ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"] )</th>
              <th width="3%" colspan="3">Action</th>
           </tr>
             @foreach ($districts as $key => $district)
@@ -39,7 +39,8 @@
         </table>
 
         <div class="d-flex">
-            {!! $districts->links() !!}
+            {{-- {!! $districts->links() !!} --}}
+            {!! $districts->appends(request()->except('page'))->render() !!}
         </div>
 
     </div>
