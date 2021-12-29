@@ -15,4 +15,9 @@ class Province extends Model
     ];
     
     public $sortable = ['id', 'name', 'created_at', 'updated_at'];
+
+    public function districts()
+    {
+        // return $this->hasMany(District::class);
+    }
 }

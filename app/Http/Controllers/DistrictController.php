@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\District;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 class DistrictController extends Controller
@@ -14,7 +15,9 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        $districts = District::sortable()->latest()->paginate(10);
+        $districts = District::sortable()->with(['provinces'])->latest()->paginate(10);
+        // dd($districts);
+
         return view('district.index', compact('districts'));
     }
 

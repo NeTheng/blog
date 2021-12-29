@@ -17,12 +17,16 @@
           <tr>
              <th width="1%">@sortablelink('id', 'No.',  ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"] )</th>
              <th>@sortablelink('name', 'Name',  ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"] )</th>
+             <th>@sortablelink('province_id', 'Province',  ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"] )</th>
+             <th>@sortablelink('created_at', 'Created At',  ['joe' => 'doe', 'jane' => 'doe'], ["class" => "dropdown-toggle"] )</th>
              <th width="3%" colspan="3">Action</th>
           </tr>
             @foreach ($districts as $key => $district)
             <tr>
                 <td>{{ $district->id }}</td>
                 <td>{{ $district->name }}</td>
+                <td>{{ $district->provinces->name }}</td>
+                <td>{{ $district->created_at }}</td>
                 <td>
                     <a class="btn btn-info btn-sm" href="{{ route('district.show', $district->id) }}">Show</a>
                 </td>

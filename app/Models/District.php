@@ -15,4 +15,8 @@ class District extends Model
     ];
 
     public $sortable = ['id', 'name', 'created_at', 'updated_at'];
+
+    public function provinces(){
+        return $this->belongsTo(Province::class, 'province_id', 'id');
+    }
 }
