@@ -2,8 +2,49 @@
 
 @section('content')
 
+
+{{ Form::open(array('action' => 'DistrictController@index', 'method' => 'get')) }}
+
+{{Form::token()}}
+    <div class="bg-light p-4 rounded">
+        <h2>Search</h2>
+        <div class="row mb-3">
+            <div class="col-4 themed-grid-col">
+                <div class="mb-3">
+                    <label for="name" class="form-label">District name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="District">
+                </div>
+
+            </div>
+            <div class="col-4 themed-grid-col">
+
+                <label for="province" class="form-label">Province</label>
+                <input class="form-control" list="datalistOptions" id="province" name="province" placeholder="Type to search...">
+                        <datalist id="datalistOptions">
+
+                             @foreach ($province_lists as $key => $province_list)
+                                <option value="{{$province_list->id}}"> {{$province_list->name}} </option>
+                             @endforeach
+                        
+                    </datalist>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-auto">
+                {{Form::submit('Search', array('class' => 'btn btn-danger mb-3'))}} 
+            </div>
+            
+        </div>
+
+    </div>
+
+{{ Form::close() }}
+
+
     <div class="bg-light p-4 rounded">
         <h2>District</h2>
+
         <div class="lead">
             Manage your district here.
             <a href="{{ route('district.create') }}" class="btn btn-primary btn-sm float-right">Add District</a>

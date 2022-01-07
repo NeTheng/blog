@@ -13,12 +13,24 @@ class DistrictController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $districts = District::sortable()->with(['provinces'])->latest()->paginate(10);
-        // dd($districts);
+        $name = $request->input('name');
+        $province = $request->input('province');
 
-        return view('district.index', compact('districts'));
+        $districts = District::sortable()->with(['provinces'])->latest()->paginate(10);
+        if(!empty($name)){
+            $districts = District::where('name', 'LIKE', '%' . $name . '%')->sortable()->with(['provinces'])->latest()->paginate(10);
+        }
+        if (!empty($province)) {
+            $districts = District::where('province_id', $province)->sortable()->with(['provinces'])->latest()->paginate(10);
+        }
+
+        
+        return view('district.index', [
+            'districts' => $districts,
+            'province_lists'=> Province::all()
+        ]);
     }
 
     /**
