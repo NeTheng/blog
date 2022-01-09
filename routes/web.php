@@ -82,6 +82,8 @@ Route::group(['prefix' => 'district'], function () {
     Route::get('/{district}/edit', 'DistrictController@edit')->name('district.edit');
     Route::patch('/{district}/update', 'DistrictController@update')->name('district.update');
     Route::delete('/{district}/delete', 'DistrictController@destroy')->name('district.destroy');
+
+    Route::get('/export', 'DistrictController@export');
 });
 
 // District

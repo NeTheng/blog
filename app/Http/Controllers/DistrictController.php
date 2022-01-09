@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\DistrictExport;
 use App\Models\District;
 use App\Models\Province;
 use Illuminate\Http\Request;
+
 
 class DistrictController extends Controller
 {
@@ -97,5 +99,11 @@ class DistrictController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function export()
+    {
+        return new DistrictExport();
     }
 }
